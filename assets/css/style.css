@@ -1,0 +1,248 @@
+body {
+    vertical-align: middle;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    width: 99.8%;
+}
+
+h1 {
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 48px;
+    font-weight: bolder;
+    background: rgb(176,176,176);
+    background: linear-gradient(90deg, rgba(176,176,176,1) 0%, rgba(179,179,179,1) 39%, rgba(231,231,231,1) 100%);
+    padding: 30px;
+    border-top-right-radius: 10px;
+}
+
+h2 {
+    color: black;
+    font-size: 32px;
+    padding: 16px;
+    font-weight: bolder;
+}
+
+h3 {
+    color: black;
+    text-align: center;
+    font-size: 28px;
+    padding: 16px;
+    font-weight: bolder;
+}
+
+h4 {
+    display: inline;
+    position: relative;
+    left: 40px;
+    color: black;
+    font-size: 20px;
+    font-weight: bolder;
+    /* padding: 5px; */
+}
+
+h5 {
+    color: black;
+    font-size: 22px;
+    padding: 12px 16px 6px 28px;
+    font-weight: bolder;
+}
+
+.magic {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    flex: 1 1 100px;
+}
+
+nav {
+    flex: 1 1 20px;
+    background-color: rgb(108, 216, 216);
+    padding: 20px;
+    margin: 2px 0px 0px 0px;
+    border-bottom-right-radius: 10px;
+}
+
+/* .hat {
+    position: relative;
+    top: -170px;
+    width: 280px;
+} */
+
+/* Trying to find a way to get this over the top banners more naturally, but it mssed up the formatting of the rest of the page. */
+
+.hat {
+    float: right;
+    background: rgb(231,231,231);
+    background: radial-gradient(circle, rgba(231,231,231,1) 0%, rgba(179,179,179,1) 39%, rgba(143,163,167,1) 100%);
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    width: 280px;
+    border-radius: 10px;
+}
+
+.navbar {
+    display: inline;
+    float: right;
+}
+
+nav a {
+    color: grey;
+    font-size: 19px;
+    font-weight: bolder;
+    padding: 12px;
+}
+
+.hax1, .hax2 {
+    display: none;
+}
+
+/* I couldn't seem to find a way of getting the section and aside to appear side-by-side without setting main to flex. It works fine, but it would be good to know how to do it without flex too. */
+
+.wrapper {
+    background-color:rgb(82, 160, 160);
+    /* display: flex; */
+    margin: 10px 0px;
+    padding: 1px 8px 8px 8px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 99.2%;
+    /* height: fit-content; */
+}
+
+/* I tried to add a height: fit-content; to have the background wrapper grow if the aside gets too big, but it didn't work */
+
+/* I had this as flex at first, but had a hard time setting up everything to display properly. Not sure if it's better this way or what I'd gain by making it flex. */
+
+/* As the display narrows, the header area and body area get slightly out of sync size-wise. */
+
+main {
+    width: 65%;
+    margin: 0px;
+}
+
+/* The main is throwing up a weird thing where the inspector shows the margin as basically being the aside. */
+
+main section {
+    /* display: block; */
+    background-color: whitesmoke;
+    height: fit-content;
+    min-height: 200px;
+    /* border: black;
+    border-width: 2px;
+    border-style: solid; */
+    margin: 15px 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+main section h2, aside h2 {
+    border-radius: 7px;    
+}
+
+/* It feels like this is only necessary because I missed something else. */
+
+aside {
+    float: right;
+    background-color: whitesmoke;
+    width: 32%;
+    height: 100%;
+    /* border: black;
+    border-width: 2px;
+    border-style: solid; */
+    margin: 15px 10px;
+    border-radius: 10px;
+}
+
+.at {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%
+}
+
+p {
+    font-size: 18px;
+    line-height: 24px;
+    padding: 8px 15px;
+}
+
+main img {
+    float: left;
+    width: 250px;
+    padding: 20px;
+}
+
+/* I cannot for the life of me figure out why the first header isn't popping over to the right of the image while the rest of them are. */
+
+.service {
+    margin: 0 0 20px 0;
+}
+
+.lol {
+    color: white;
+}
+
+footer {
+    background-color: rgb(245, 82, 136);
+    font-size: 24px;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* Is there an easy way to adjust the height with height: Npx; and keep the text and other elements centered? */
+
+footer img {
+    width: 24px;
+}
+
+footer div {
+    line-height: 40px;
+}
+
+.ABR {
+    display: none;
+}
+
+.magic:hover .hax1 {
+    display: inline;
+    color:rgb(108, 216, 216);
+    background-color:rgb(82, 160, 160);
+}
+
+.hax:active .hax2 {
+    display: inline;
+    color: grey;
+    background-color:rgb(82, 160, 160);
+}
+
+.footer:hover .ABR {
+    display: inherit;
+}
+
+@media screen and (max-width: 992px) {
+    nav p {
+        display: none;
+    }
+    main img, aside img, .hat, .at {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 786px) {
+    .fluff {
+        display: none;
+    }
+}
+
+/* Is there a way to have the aside stack below the main when squeezed as-is? Or does that require rebuilding it with flex? */
+
+/* Also, is there a way to apply multiple tags in sequence to an element? Just to clean things up a bit. */
