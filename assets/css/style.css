@@ -48,11 +48,18 @@ h5 {
     font-weight: bolder;
 }
 
+p {
+    font-size: 18px;
+    line-height: 24px;
+    padding: 8px 15px;
+}
+
 a h2 {
     color: #0000FF;
 }
 
 /* Unless I add the h2 here, only the underline is colored regardless of whether I put this before or after the h2 style. */
+/* I've been told styling a directly is fiddly. */
 
 .magic {
     display: flex;
@@ -65,7 +72,8 @@ header {
 
 nav {
     flex: 1 1 20px;
-    background-color: rgb(108, 216, 216);
+    background: rgb(108,216,216);
+    background: linear-gradient(90deg, rgba(108,216,216,1) 0%, rgba(95,240,240,1) 100%);
     padding: 20px;
     margin: 2px 0px 0px 0px;
     border-bottom-right-radius: 10px;
@@ -81,13 +89,23 @@ nav {
 
 .hat {
     float: right;
-    background: rgb(231,231,231);
-    background: radial-gradient(circle, rgba(231,231,231,1) 0%, rgba(179,179,179,1) 39%, rgba(143,163,167,1) 100%);
     border-color: black;
     border-width: 2px;
     border-style: solid;
     width: 280px;
     border-radius: 10px;
+}
+
+.hat img {
+    width: 280px;
+    background: rgb(231,231,231);
+    background: radial-gradient(circle, rgba(231,231,231,1) 0%, rgba(179,179,179,1) 39%, rgba(143,163,167,1) 100%);
+}
+
+.laughing {
+    display: none;
+    color: whitesmoke;
+    width: 280px;
 }
 
 .navbar {
@@ -108,7 +126,7 @@ nav a {
 
 .banner {
     background-color: black;
-    padding: 5px 2px 1px 0;
+    /* padding: 5px 2px 1px 0; */
 }
 
 .banner img {
@@ -118,7 +136,8 @@ nav a {
 /* There's always an extra ~4 black pixels of padding at the bottom of these and I can't figure out why. For now I just removed 3 pixels from the bottom border. */
 
 .wrapper {
-    background-color:rgb(82, 160, 160);
+    background: rgb(130,203,203);
+    background: linear-gradient(34deg, rgba(130,203,203,1) 0%, rgba(132,220,220,1) 45%, rgba(136,255,255,1) 100%);
     /* display: flex; */
     /* margin: 10px 0px; */
     padding: 1px 8px 8px 8px;
@@ -157,6 +176,25 @@ main section h2, aside h2 {
     border-radius: 7px;    
 }
 
+main img {
+    float: left;
+    width: 250px;
+    padding: 25px 20px 8px 20px;
+}
+
+.about {
+    background: rgb(130,203,203);
+    background: linear-gradient(34deg, rgba(130,203,203,1) 0%, rgba(132,220,220,1) 45%, rgba(136,255,255,1) 100%);
+    margin: 8px 0;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+}
+
+.about p {
+    font-size: 20px;
+}
+
 /* It feels like this is only necessary because I missed something else. */
 
 aside {
@@ -174,6 +212,10 @@ aside {
     border-radius: 10px;
 }
 
+.why {
+    padding-bottom: 10px;
+}
+
 .contact {
     margin: 0 auto;
     max-width: 400px;
@@ -181,7 +223,7 @@ aside {
 
 .cform {
     display: block;
-    padding: 10px;
+    padding: 0 10px 10px 10px;
     line-height: 25px;
 }
 
@@ -238,19 +280,9 @@ form {
     width: 50%
 }
 
-p {
-    font-size: 18px;
-    line-height: 24px;
-    padding: 8px 15px;
+.contact p {
+    padding: 0 4px 4px 4px;
 }
-
-main img {
-    float: left;
-    width: 250px;
-    padding: 25px 20px 8px 20px;
-}
-
-/* I feel like there should be some way of doing a forced center alignment of the images, but that may not even work well at smaller display sizes as the elements get taller. */
 
 .service {
     margin: 0 0 20px 0;
@@ -285,6 +317,14 @@ footer div {
     display: none;
 }
 
+.hat:hover .teh-hat {
+    display: none;
+}
+
+.hat:hover .laughing {
+    display: block;
+}
+
 .magic:hover .hax1 {
     display: inline;
     color:rgb(108, 216, 216);
@@ -296,6 +336,13 @@ footer div {
     color: grey;
     background-color:rgb(82, 160, 160);
 }
+
+main section:hover .noticeMe {
+    width: 275px;
+    padding: 17px;
+}
+
+/* Need to figure out if there's a way to have this increase dynamically, or if I need to hard-code it to a certain size. */
 
 .footer:hover .ABR {
     display: inherit;
@@ -368,7 +415,3 @@ footer div {
         width: 262px;
     }
 }
-
-/* So it looks like order only works in flex. So that might take a redesign unless I brute-force it with duplicated content. But that would be fixed anyway if I can figre out how to get aside and main to display properly when aside comes after main in the HTML.*/
-
-/* Is there a way to apply multiple tags in sequence to an element? Just to clean things up a bit. */
